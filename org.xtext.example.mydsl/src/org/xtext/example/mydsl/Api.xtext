@@ -7,12 +7,13 @@ ApiFile:
 	imports+=UseTypes*;
 
 UseTypes: 
-	'USETYPES' filename=FileItemPath ';'
+	'USETYPES' filename=FilePath ';'
 ;
 
-FileItemPath returns ecore::EString:
+FilePath returns ecore::EString:
 	((ID|DIRPATH))| STRING;
-	
+
+// No QualifiedName used here: 'dot' character added to ID terminal rule definition	
 terminal ID		: '^'?('a'..'z'|'A'..'Z'|'_'|'-'|'0'..'9') ('a'..'z'|'A'..'Z'|'_'|'-'|'0'..'9'|'.')*;
 terminal DIRPATH:
 	'/'| 
