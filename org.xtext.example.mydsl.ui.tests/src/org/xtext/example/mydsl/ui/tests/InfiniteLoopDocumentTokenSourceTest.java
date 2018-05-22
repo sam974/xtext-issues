@@ -57,7 +57,7 @@ public class InfiniteLoopDocumentTokenSourceTest extends Assert {
 	}
 	
 	
-	@Test
+	@Test(timeout = 2000)
 	// https://github.com/eclipse/xtext-eclipse/issues/678
 	public void testFrozenInfiniteLoop() throws Exception {
 		document.set("USETYPES   ");
